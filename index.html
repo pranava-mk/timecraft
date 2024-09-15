@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeCraft - Soon to Launch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Acme', sans-serif;
+            background-color: #ffe1a8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            color: #ee4266;
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+        .slogan {
+            color: #000000;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        .icon {
+            font-size: 3em;
+            color: #e26d5c;
+            margin-bottom: 20px;
+        }
+        .typewriter {
+            color: #561F01;
+            font-size: 2em;
+            font-family: 'Acme', sans-serif;
+            overflow: hidden;
+            border-right: .15em solid #561F01;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(14, end),
+                blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #561F01; }
+        }
+        .background-element {
+            position: absolute;
+            background-color: #020202;
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+         <img src="./images/timecraft-favicon-color.png" alt="TimeCraft Logo"></div>
+        <h1>TimeCraft</h1>
+        <p class="slogan">Where Time is the New Currency</p>
+        <div class="typewriter">Soon to launch</div>
+    </div>
+
+    <script>
+        function createBackgroundElements() {
+            const container = document.body;
+            for (let i = 0; i < 20; i++) {
+                const element = document.createElement('div');
+                element.classList.add('background-element');
+                element.style.width = `${Math.random() * 50 + 10}px`;
+                element.style.height = element.style.width;
+                element.style.left = `${Math.random() * 100}vw`;
+                element.style.top = `${Math.random() * 100}vh`;
+                container.appendChild(element);
+            }
+        }
+        createBackgroundElements();
+    </script>
+</body>
+</html>
